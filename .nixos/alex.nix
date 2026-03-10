@@ -14,11 +14,11 @@ let
     buildInputs = [
       pkgs.stdenv.cc.cc.lib
       pkgs.zlib
-      pkgs.xorg.libX11
-      pkgs.xorg.libXext
-      pkgs.xorg.libXrender
-      pkgs.xorg.libXtst
-      pkgs.xorg.libXi
+      pkgs.libX11
+      pkgs.libXext
+      pkgs.libXrender
+      pkgs.libXtst
+      pkgs.libXi
       pkgs.freetype
       pkgs.alsa-lib
       pkgs.wayland
@@ -50,6 +50,7 @@ in
     extraGroups = [ "networkmanager" "wheel" "docker"];
     packages = [
       # GUI
+      pkgs.gf
       pkgs.adwaita-icon-theme
       pkgs.thunar
       pkgs.xournalpp
@@ -86,6 +87,7 @@ in
       pkgs.thunderbird-bin
 
       # Terminal tools
+      pkgs.tailspin
       pkgs.kalker
       pkgs.speedtest-cli
       pkgs.zoxide
@@ -111,6 +113,7 @@ in
       pkgs.netscanner
       pkgs.impala
       pkgs.zellij
+      pkgs.rainfrog
 
       # TSN
       pkgs.wireshark

@@ -24,12 +24,13 @@
   # TODO: Sort this out
   environment.systemPackages = [
     pkgs.nix-index
-    pkgs.xorg.xhost
+    pkgs.xhost
 
     pkgs.desktop-file-utils
     pkgs.testdisk
 
     pkgs.openvpn
+    pkgs.liburing
     pkgs.fzf
     pkgs.vim
     pkgs.parallel
@@ -38,12 +39,12 @@
     pkgs.libGL
     pkgs.pciutils
     pkgs.openfortivpn
-    pkgs.xorg.xev
+    pkgs.xev
     pkgs.p7zip
     pkgs.dunst
     pkgs.xclip
     pkgs.xsel
-    pkgs.xorg.xmodmap
+    pkgs.xmodmap
     pkgs.eza
     pkgs.gnumake
     pkgs.zellij
@@ -95,7 +96,7 @@
     pkgs.findutils
     pkgs.linuxHeaders
     pkgs.ripgrep
-    pkgs.linux-manual
+    # pkgs.linux-manual
     pkgs.man-pages
     pkgs.man-pages-posix
     pkgs.libGL

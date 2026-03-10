@@ -8,8 +8,7 @@ config.enable_tab_bar = false
 config.max_fps = 100
 config.animation_fps = 100
 
--- config.window_background_opacity = 0.94
-config.window_background_opacity = 1
+config.window_background_opacity = 1.0
 config.use_resize_increments = true
 
 config.font_size = 13
@@ -71,5 +70,9 @@ config.custom_block_glyphs = true
 local gpus = wezterm.gui.enumerate_gpus()
 config.webgpu_preferred_adapter = gpus[1]
 config.front_end = 'OpenGL'
+
+config.keys = {
+    { key = 'Enter', mods = 'ALT', action = wezterm.action.DisableDefaultAssignment },
+}
 
 return config

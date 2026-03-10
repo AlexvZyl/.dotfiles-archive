@@ -1,9 +1,14 @@
+# Gospel
+# https://www.thegospelcoalition.org/feed/  # Noisy.
+
 # General.
 https://hnrss.org/newest?points=1300 "~Hacker News" FOSS
 
+# Geopolitics.
+https://www.oafnation.com/blogs/news.atom
+
 # Security.
-# Too noisy
-# https://www.wiz.io/feed/rss.xml "~Wiz Blog" Security
+# https://www.wiz.io/feed/rss.xml "~Wiz Blog" Security # Too noisy.
 https://securitylabs.datadoghq.com/rss/feed.xml "~Data Dog" Security
 
 # People.
