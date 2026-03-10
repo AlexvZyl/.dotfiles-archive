@@ -16,3 +16,7 @@ customCommands:
     command: 'git submodule update --init --recursive --force'
     output: popup
     description: "Force bulk init and update submodules recursively"
+    prompts:
+      - type: 'confirm'
+        title: 'Are you sure?'
+        body: 'This will force update all submodules recursively.'
