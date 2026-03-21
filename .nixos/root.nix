@@ -107,6 +107,7 @@
     pkgs.atuin
     inputs.zen-browser.packages."${pkgs.system}".default
     pkgs.polkit_gnome
+    pkgs.maple-mono.NF-unhinted
   ];
 
   programs.i3lock.enable = true;
@@ -122,6 +123,7 @@
   };
 
   fonts.packages = [
+    pkgs.maple-mono.NF-unhinted
     pkgs.nerd-fonts.jetbrains-mono
   ];
 

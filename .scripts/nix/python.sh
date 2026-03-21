@@ -16,7 +16,7 @@ Main() {
     Add_package_to_lib "zlib"
 
     "$(which nix-shell)" \
-        -p python3 python3Packages.virtualenv zlib \
+        -p python3 python3Packages.pip python3Packages.virtualenv zlib \
         --command '
             virtualenv venv;
             source venv/bin/activate;

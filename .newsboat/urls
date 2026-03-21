@@ -21,7 +21,7 @@ https://matklad.github.io/feed.xml
 https://feed.podbean.com/rudolphjnr1/feed.xml
 
 # Software.
-https://godotengine.org/rss.xml "~Godot Engine"
+# https://godotengine.org/rss.xml "~Godot Engine" # Not using atm
 https://bevy.org/atom.xml "~Bevy Engine"
 https://signal.org/blog/rss.xml "~Signal Blog"
 https://tigerbeetle.com/blog/atom.xml

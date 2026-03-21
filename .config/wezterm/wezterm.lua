@@ -21,10 +21,16 @@ config.bold_brightens_ansi_colors = false
 
 config.audible_bell = "Disabled"
 config.warn_about_missing_glyphs = false
+
 config.font = wezterm.font({
     family = 'JetBrains Mono',
     weight = 'Medium'
 })
+
+-- config.font = wezterm.font({
+--     family = 'Maple Mono NF Medium',
+--     weight = 'Medium'
+-- })
 
 config.default_cursor_style = 'BlinkingBlock'
 
