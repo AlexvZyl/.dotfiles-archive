@@ -105,7 +105,6 @@
     pkgs.picom
     pkgs.trace-cmd
     pkgs.atuin
-    inputs.zen-browser.packages."${pkgs.system}".default
     pkgs.polkit_gnome
     pkgs.maple-mono.NF-unhinted
   ];
@@ -146,7 +145,7 @@
     enable = true;
     man.enable = true;
     dev.enable = true;
-    man.generateCaches = true;
+    man.generateCaches = false;
   };
 
   # Ftrace.

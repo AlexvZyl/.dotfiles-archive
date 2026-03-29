@@ -51,6 +51,7 @@ in
     packages = [
       # GUI
       pkgs.gf
+      pkgs.brave
       pkgs.adwaita-icon-theme
       pkgs.thunar
       pkgs.xournalpp
@@ -74,7 +75,6 @@ in
       pkgs.zathura
       pkgs.feh
       pkgs.arandr
-      pkgs.chromium
       pkgs.gimp3
       pkgs.rustdesk
       pkgs.vscode-fhs
@@ -220,64 +220,9 @@ in
     '';
   };
 
-  # HACK: AI generated.  Get back to this at some point.
-  systemd.user = let
-    homeDir = config.users.users.alex.home;
-  in {
-    services.fix-chromium-apps = {
-      description = "Fix Chromium PWA desktop entries";
-      serviceConfig = {
-        Type = "oneshot";
-        ExecStart = pkgs.writeShellScript "fix-chromium-apps" ''
-          if [ -d "${homeDir}/.local/share/applications" ]; then
-            ${pkgs.gnused}/bin/sed -i '/NoDisplay=true/d' ${homeDir}/.local/share/applications/chrome-*.desktop || true
-            ${pkgs.desktop-file-utils}/bin/update-desktop-database ${homeDir}/.local/share/applications || true
-          fi
-        '';
-      };
-    };
-    paths.fix-chromium-apps = {
-      description = "Watch for Chromium PWA desktop file changes";
-      wantedBy = [ "default.target" ];
-      pathConfig = {
-        PathChanged = "${homeDir}/.local/share/applications";
-        Unit = "fix-chromium-apps.service";
-      };
-    };
-  };
-
   virtualisation.docker.enable = true;
   programs.fish.enable = true;
   programs.noisetorch.enable = true;
-
-  programs.chromium = {
-    enable = true;
-    extraOpts = {
-      "WebAppInstallForceList" = [
-        { url = "https://admin.google.com/u/1/ac/home"; default_launch_container = "window"; create_desktop_shortcut = true; custom_name = "Google Admin"; }
-        { url = "https://drive.google.com"; default_launch_container = "window"; create_desktop_shortcut = true; custom_name = "Google Drive"; }
-        { url = "https://www.youtube.com"; default_launch_container = "window"; create_desktop_shortcut = true; custom_name = "YouTube"; }
-        { url = "https://gemini.google.com"; default_launch_container = "window"; create_desktop_shortcut = true; custom_name = "Gemini"; }
-        { url = "https://liveuamap.com/"; default_launch_container = "window"; create_desktop_shortcut = true; custom_name = "Liveuamap"; }
-        { url = "https://teams.microsoft.com"; default_launch_container = "window"; create_desktop_shortcut = true; custom_name = "Microsoft Teams"; }
-        { url = "https://music.youtube.com"; default_launch_container = "window"; create_desktop_shortcut = true; custom_name = "YouTube Music"; }
-        { url = "https://www.perplexity.ai"; default_launch_container = "window"; create_desktop_shortcut = true; custom_name = "Perplexity"; }
-        { url = "https://mail.google.com"; default_launch_container = "window"; create_desktop_shortcut = true; custom_name = "Gmail"; }
-        { url = "https://web.whatsapp.com"; default_launch_container = "window"; create_desktop_shortcut = true; custom_name = "WhatsApp"; }
-        { url = "https://gis.elsenburg.com/apps/cfm/"; default_launch_container = "window"; create_desktop_shortcut = true; custom_name = "Elsenburg CFM"; }
-        { url = "https://mail.proton.me"; default_launch_container = "window"; create_desktop_shortcut = true; custom_name = "Proton Mail"; }
-        { url = "https://calendar.google.com"; default_launch_container = "window"; create_desktop_shortcut = true; custom_name = "Google Calendar"; }
-        { url = "https://excalidraw.com"; default_launch_container = "window"; create_desktop_shortcut = true; custom_name = "Excalidraw"; }
-        { url = "https://app.clockify.me"; default_launch_container = "window"; create_desktop_shortcut = true; custom_name = "Clockify"; }
-        { url = "https://admin.shopify.com/store/alpaca-9159"; default_launch_container = "window"; create_desktop_shortcut = true; custom_name = "Shopify Admin"; }
-        { url = "https://maps.google.com"; default_launch_container = "window"; create_desktop_shortcut = true; custom_name = "Google Maps"; }
-        { url = "https://photos.google.com"; default_launch_container = "window"; create_desktop_shortcut = true; custom_name = "Google Photos"; }
-        { url = "https://www.property24.com"; default_launch_container = "window"; create_desktop_shortcut = true; custom_name = "Property24"; }
-        { url = "https://monkeytype.com"; default_launch_container = "window"; create_desktop_shortcut = true; custom_name = "Monkeytype"; }
-        { url = "https://outlook.office.com/mail/"; default_launch_container = "window"; create_desktop_shortcut = true; custom_name = "Outlook"; }
-      ];
-    };
-  };
 
   # Gaming stuff.
   programs.steam = {

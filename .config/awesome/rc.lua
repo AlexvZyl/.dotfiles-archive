@@ -75,7 +75,7 @@ local globalkeys = gears.table.join(
     awful.key({ modkey, }, "d", function() awful.spawn("/home/alex/.config/rofi/apps.sh") end),
     awful.key({ modkey, }, "r", function() awful.spawn("wezterm -e /home/alex/.config/tmux/apps/start_newsboat.sh") end),
     awful.key({ modkey, }, "s", function() awful.spawn("/home/alex/.config/rofi/tmux.sh") end),
-    awful.key({ modkey, }, "b", function() awful.spawn("zen") end),
+    awful.key({ modkey, }, "b", function() awful.spawn("brave") end),
     awful.key({ modkey, }, "Tab", function() awful.spawn("/home/alex/.config/rofi/window.sh") end),
     -- HACK: Seems to be a bug in flameshot.
     awful.key({ modkey, "Shift" }, "s",
