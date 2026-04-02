@@ -2,7 +2,7 @@
 auto-reload yes
 notify-program "notify-send"
 # browser "lynx -vikeys -accept_all_cookies -force_secure"
-browser "chromium"
+browser "brave --new-window %u"
 # browser "w3m -o auto_image=FALSE"
 
 # Key bindings.
