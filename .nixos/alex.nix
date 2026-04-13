@@ -83,7 +83,7 @@ in
       # Communication
       pkgs.slack
       pkgs.discord
-      pkgs.signal-desktop-bin
+      pkgs.signal-desktop
       pkgs.thunderbird-bin
 
       # Terminal tools
@@ -141,8 +141,10 @@ in
       pkgs.pylint
       pkgs.python3Packages.flake8
       pkgs.luajitPackages.luacheck
-      pkgs.nodePackages.bash-language-server
-      pkgs.nodePackages.typescript-language-server
+      pkgs.bash-language-server
+      pkgs.vscode-json-languageserver
+      pkgs.eslint
+      pkgs.typescript-language-server
       pkgs.docker-ls
       pkgs.dockerfile-language-server
       pkgs.clang-tools
@@ -151,7 +153,6 @@ in
       pkgs.terraform-providers.hashicorp_aws
       pkgs.cmake
       pkgs.vscode-langservers-extracted
-      pkgs.nodePackages.eslint
       pkgs.cppcheck
       pkgs.ninja
       pkgs.rocmPackages.llvm.clang
@@ -162,7 +163,6 @@ in
       pkgs.nodejs
       pkgs.grpcurl
       pkgs.subversionClient
-      pkgs.nodePackages_latest.vscode-json-languageserver
       pkgs.zig
       pkgs.zls
       pkgs.docker-compose

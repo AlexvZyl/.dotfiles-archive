@@ -145,7 +145,7 @@
     enable = true;
     man.enable = true;
     dev.enable = true;
-    man.generateCaches = false;
+    man.cache.enable = true;
   };
 
   # Ftrace.
