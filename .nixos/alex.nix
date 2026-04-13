@@ -177,7 +177,13 @@ in
       pkgs.cargo
       pkgs.tokio-console
       pkgs.cargo-flamegraph
-      pkgs.tree-sitter (pkgs.python3.withPackages(ps: with ps; [pytz numpy pandas]))
+      pkgs.tree-sitter
+      (pkgs.vimPlugins.nvim-treesitter.withPlugins (p: with p; [
+        bash c cpp css dockerfile go hcl html javascript json
+        kotlin lua markdown nix proto python rust terraform
+        typescript yaml zig
+      ]))
+      (pkgs.python3.withPackages(ps: with ps; [pytz numpy pandas]))
       pkgs.clang-tools
       pkgs.kotlin
       pkgs.gradle
