@@ -24,7 +24,7 @@ config.warn_about_missing_glyphs = false
 
 config.font = wezterm.font({
     family = 'JetBrains Mono',
-    weight = 'Medium'
+    weight = 'Medium',
 })
 
 -- config.font = wezterm.font({

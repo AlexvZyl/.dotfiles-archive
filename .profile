@@ -49,12 +49,13 @@ alias setup-wallpapers="feh --bg-fill \$HOME/.wallpapers/alena-aenami-quiet-1px.
 # Dev.
 alias lg="lazygit"
 alias lzd="lazydocker"
-alias nh="nvim ."
 alias tmux-workspace="~/.config/tmux/utils/create_workspace.sh"
 alias tw="tmux-workspace"
 alias tks="tmux kill-session"
 alias tclear="clear && tmux clear-history"
 alias oc="opencode"
+# HACK: Nixos shenanigans.
+alias nvim="$(which nvim) -u ~/.config/nvim/init.lua"
 
 # Git.
 alias git-su="git submodule update --init --recursive"
@@ -69,6 +70,7 @@ alias nix-update="sudo nix flake update --flake \$HOME/.nixos && sudo nix-channe
 alias nix-clear="sudo nix-collect-garbage --delete-older-than"
 alias nix-upgrade="sudo nixos-rebuild switch --upgrade --flake \$HOME/.nixos#default --impure && notify-send 'NixOS' 'Build complete.' || notify-send --urgency=critical 'NixOS' 'Build failed.'"
 alias nix-list-builds="sudo nix-env -p /nix/var/nix/profiles/system --list-generations"
+alias nix-rollback="sudo nixos-rebuild switch --rollback --flake \$HOME/.nixos#default --impure && notify-send 'NixOS' 'Build complete.' || notify-send --urgency=critical 'NixOS' 'Build failed.'"
 
 alias nix-python-activate="~/.scripts/nix/python.sh"
 alias npa="nix-python-activate"
