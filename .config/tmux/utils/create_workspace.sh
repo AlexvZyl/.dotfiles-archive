@@ -27,7 +27,7 @@ Main() {
     tmux swap-window -t +1
     tmux next-window
     tmux select-window -t 1
-    nvim
+    nvim -u ~/.config/nvim/init.lua
 }
 
 

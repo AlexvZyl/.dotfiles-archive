@@ -1,5 +1,6 @@
 {
     "$schema": "https://opencode.ai/config.json",
+    "autoupdate": false,
     "agent": {
         "build": {
             "disable": true
@@ -25,5 +26,10 @@
             "color": "#f08080",
             "prompt": "Surgical code editor. Execute precise, minimal changes as requested. No unsolicited refactoring or reorganization. Propose design improvements before implementation. Maintain existing code style. Clarify ambiguities rather than assuming. Verify only when explicitly requested."
         },
-    }
+    },
+    // "mcp": {
+    //     "": {
+    //         "enabled": false,
+    //     }
+    // }
 }

@@ -55,7 +55,7 @@ alias tks="tmux kill-session"
 alias tclear="clear && tmux clear-history"
 alias oc="opencode"
 # HACK: Nixos shenanigans.
-alias nvim="$(which nvim) -u ~/.config/nvim/init.lua"
+alias nvim="nvim -u ~/.config/nvim/init.lua"
 
 # Git.
 alias git-su="git submodule update --init --recursive"
