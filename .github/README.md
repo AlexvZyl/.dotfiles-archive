@@ -1,3 +1,6 @@
+> [!NOTE]
+> I have moved to an industry where security is very important.  For that reason I am archiving this repo and taking my dotfiles private, as I don't want to accidentally leak anything.  
+
 # 🗃️ .dotfiles
 
 <div align="center">
